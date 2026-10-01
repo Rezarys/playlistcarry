@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<title>playlistcarry: move your NewPipe playlists to FreeTube</title>
+<meta name="description" content="Open a NewPipe backup in the browser, see your local playlists, and get a playlists file in the format FreeTube's Import Playlists button reads. Nothing is uploaded.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Move your NewPipe playlists to FreeTube</h1>
+<p>FreeTube can import your NewPipe subscriptions, but not your NewPipe playlists. This page opens a NewPipe backup, shows every local playlist and its videos as links, and gives you a playlists file for FreeTube.</p>
+<p class="small">In NewPipe, open Settings, then Backup and restore, then Export database. Copy the .zip file to this computer and choose it below. The file is read in your browser and nothing in this page's code sends it anywhere; the page's security policy also stops its scripts from making network requests.</p>
+<p><label>NewPipe backup (.zip, or the newpipe.db inside it) <input type="file" id="file" accept=".zip,.db,application/zip"></label></p>
+<p id="status" role="status"></p>
+<div id="actions" hidden>
+<p><button type="button" id="freetube">Download playlists for FreeTube (.db)</button></p>
+<p class="small">In FreeTube, open Settings, then the Data section, then Import Playlists, and choose this file. FreeTube adds a playlist that has the same name as one you already have to that one, instead of making a second copy. Only YouTube videos go into this file; videos from other services, and playlists you bookmarked in NewPipe, are in the text list.</p>
+<p><button type="button" id="text">Download as a text list (.txt)</button> <button type="button" id="clear">Clear the page</button></p>
+</div>
+<div id="list"></div>
+<div class="price">
+<p><strong>Watch history too: 3 USD, one time, not built yet.</strong></p>
+<p>It would carry your NewPipe watch history over to FreeTube, so the videos you have already seen show as watched. Nothing is charged now and no date is promised. If you want it, say so in a public comment on the issue below; there is no payment of any kind before I answer there.</p>
+<p><a href="https://github.com/Rezarys/playlistcarry/issues/1">Tell me you want it (free GitHub account needed)</a></p>
+</div>
+<p class="small">Not affiliated with NewPipe, FreeTube or YouTube. The names are used here only to say which files this page reads and writes. Built with AI assistance, reviewed and tested by me. No cookies, no browser storage, no analytics, no third-party code. MIT licensed, source on <a href="https://github.com/Rezarys/playlistcarry">GitHub</a>. Younes Z.</p>
+<script src="reader.js"></script>
+<script src="playlists.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
